@@ -501,7 +501,7 @@ onloadFunction = function() {
             if(window.ZS_PreviewMode){
                     func2(JSON.stringify(carouselProp));
             }else{
-                xml("GET","/carousel.txt",func2,""); //No I18N
+                xml("GET","carousel.txt",func2,""); //No I18N
             }
         }
     }
@@ -3034,7 +3034,7 @@ fnChangeTab = function(evt){
             if(window.ZS_PreviewMode){
                     func2(JSON.stringify(carouselProp));
             }else{
-                xml("GET","/carousel.txt",func2,""); //No I18N
+                xml("GET","carousel.txt",func2,""); //No I18N
             }
         }
 
