@@ -434,8 +434,8 @@ onloadFunction = function() {
         }else{
             xml("GET","/gallery.txt",function(res){//NO I18N
                 window.ownGallery = JSON.parse(res);
-                commonLoadScript("/js/gallery.js");//NO I18N
-                commonLoadScript("/js/collage.js");//NO I18N
+                commonLoadScript("js/gallery.js");//NO I18N
+                commonLoadScript("js/collage.js");//NO I18N
                 loadingAlbumCount = 1;
                 },"");
         }
@@ -2931,8 +2931,8 @@ fnChangeTab = function(evt){
             }else{
                 xml("GET","/gallery.txt",function(res){//NO I18N
                     window.ownGallery = JSON.parse(res);
-                    commonLoadScript("/js/gallery.js");//NO I18N
-                    commonLoadScript("/js/collage.js");//NO I18N
+                    commonLoadScript("js/gallery.js");//NO I18N
+                    commonLoadScript("js/collage.js");//NO I18N
                     loadingAlbumCount = 1;
                     },"");
             }
