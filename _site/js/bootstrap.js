@@ -481,7 +481,7 @@ onloadFunction = function() {
                             imgArr.push(imgs[i]);
                         }else{
                             var imgSrc = imgs[i].split("/");
-                            imgArr.push(firstPath + imgs[i].replace(imgSrc[2]+"/",""));
+                            imgArr.push(imgs[i].replace(imgSrc[2]+"/",""));
                         }
                     }
                     var carCont = document.createElement("div");
@@ -3006,7 +3006,7 @@ fnChangeTab = function(evt){
                             imgArr.push(imgs[i]);
                         }else{
                             var imgSrc = imgs[i].split("/");
-                            imgArr.push(firstPath+imgs[i].replace(imgSrc[2]+"/",""));
+                            imgArr.push(imgs[i].replace(imgSrc[2]+"/",""));
                         }
                     }
                     var carCont;
