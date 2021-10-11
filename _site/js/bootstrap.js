@@ -516,7 +516,7 @@ onloadFunction = function() {
         playLists = getElementsByName_iefix("div", "audioplaylist");//NO I18N
     }
     if(audios || playLists){
-        commonLoadScript(assetsUrl+"/js/audio.js","audio"); //NO I18N
+        commonLoadScript(assetsUrl+"js/audio.js","audio"); //NO I18N
     }
     // for social share it is come first for render fb, twit, gp
     segregateElements('socialshare', twitterElements, "name");//NO I18N
@@ -532,7 +532,7 @@ onloadFunction = function() {
     // for facebook
     segregateElements('facebook',facebookElem,"name");//NO I18N
     if(facebookElem.length >0 || isBlogPage){
-        commonLoadScript(assetsUrl+"/js/facebook.js","loadFacebookJS");//NO I18N
+        commonLoadScript(assetsUrl+"js/facebook.js","loadFacebookJS");//NO I18N
     }
 
     // for linkedin
