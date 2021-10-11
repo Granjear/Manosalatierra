@@ -6,7 +6,7 @@ var formscache = new Array();
 var formsLoaded = new Array();
 var scriptLoaded = false;
 var splitPath = window.location.pathname.split("/");
-var firstPath = splitPath.length > 2 ? splitPath[1]: "";
+var firstPath = splitPath.length > 2 ? "/"+splitPath[1]: "";
 
 var creatorJsLoaded = true;
 var startVal;
@@ -481,7 +481,7 @@ onloadFunction = function() {
                             imgArr.push(imgs[i]);
                         }else{
                             var imgSrc = imgs[i].split("/");
-                            imgArr.push(imgs[i].replace(imgSrc[2]+"/",""));
+                            imgArr.push(firstPath+imgs[i].replace(imgSrc[2]+"/",""));
                         }
                     }
                     var carCont = document.createElement("div");
@@ -3006,7 +3006,7 @@ fnChangeTab = function(evt){
                             imgArr.push(imgs[i]);
                         }else{
                             var imgSrc = imgs[i].split("/");
-                            imgArr.push(imgs[i].replace(imgSrc[2]+"/",""));
+                            imgArr.push(firstPath+imgs[i].replace(imgSrc[2]+"/",""));
                         }
                     }
                     var carCont;
