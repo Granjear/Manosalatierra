@@ -6,8 +6,8 @@ var formscache = new Array();
 var formsLoaded = new Array();
 var scriptLoaded = false;
 var splitPath = window.location.pathname.split("/");
-var firstPath = splitPath.length > 2 ? splitPath[1]+"/" : "";
-
+/*var firstPath = splitPath.length > 2 ? splitPath[1]+"/" : "";*/
+var firstPath = "";
 
 var creatorJsLoaded = true;
 var startVal;
