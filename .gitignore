@@ -10,3 +10,5 @@ vendor/
 
 # local information
 sololocal.txt
+Gemfile.lock
+.sync.ffs_db
