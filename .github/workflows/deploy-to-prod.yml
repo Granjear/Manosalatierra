@@ -1,0 +1,44 @@
+name: Build and Deploy (GitHub App Auth)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Staging Code
+        uses: actions/checkout@v4
+
+      # STEP 1: Generate the temporary token
+      - name: Generate Token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          # The repo you want to push TO
+          owner: ${{ github.repository_owner }}
+          repositories: "production-repo-name" 
+
+      # STEP 2: Build your Jekyll site (as before)
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      # STEP 3: Deploy using the generated token
+      - name: Deploy to Production
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # Use the token output from the 'generate-token' step
+          personal_token: ${{ steps.generate-token.outputs.token }}
+          external_repository: username/production-repo
+          publish_branch: main
+          publish_dir: ./_site
