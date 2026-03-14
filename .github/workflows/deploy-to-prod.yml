@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Staging Code
-        uses: actions/checkout
+        uses: actions/checkout@v6
 
       # STEP 1: Generate the temporary token
       - name: Generate Token
