@@ -3,15 +3,13 @@ name: Build and Deploy (GitHub App Auth)
 on:
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Staging Code
-        uses: actions/checkout@v4
+        uses: actions/checkout
 
       # STEP 1: Generate the temporary token
       - name: Generate Token
