@@ -18,14 +18,14 @@ jobs:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           # The repo you want to push TO
-          owner: ${{ github.repository_owner }}
-          repositories: "production-repo-name" 
+          owner: ${{ github.Granjear }}
+          repositories: "github.io" 
 
       # STEP 2: Build your Jekyll site (as before)
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
+          ruby-version: '4.0.1'
           bundler-cache: true
 
       - name: Build Jekyll Site
@@ -39,6 +39,6 @@ jobs:
         with:
           # Use the token output from the 'generate-token' step
           personal_token: ${{ steps.generate-token.outputs.token }}
-          external_repository: username/production-repo
+          external_repository: Granjear.github.io
           publish_branch: main
           publish_dir: ./_site
